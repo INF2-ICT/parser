@@ -20,13 +20,13 @@ public class XmlService implements FileParser {
                 "       <reference>" + toXml.getField20().getReference() + "</reference>\n" +
                 "   </:20:>\n" +
                 "   <:25:>\n" +
-                "       <acccount>" + toXml.getField25().getAccount() + "</account>\n" +
+                "       <account>" + toXml.getField25().getAccount() + "</account>\n" +
                 "   </:25:>\n" +
                 "   <:28C:>\n" +
-                "       <statementNumber>" + toXml.getField28C().getStatementNumber() + "</statementNumber\n>" +
+                "       <statementNumber>" + toXml.getField28C().getStatementNumber() + "</statementNumber>\n" +
                 "       <sequenceNumber>" + toXml.getField28C().getSequenceNumber() + "</sequenceNumber>\n" +
-                "   </:28C>\n" +
-                "   <:60F>\n" +
+                "   </:28C:>\n" +
+                "   <:60F:>\n" +
                 "       <creditDebit>" + toXml.getField60F().getDCMark() + "</creditDebit>\n" +
                 "       <date>" + toXml.getField60F().getDate() + "</date>\n" +
                 "       <currency>" + toXml.getField60F().getCurrency() + "</currency>\n" +
@@ -46,7 +46,7 @@ public class XmlService implements FileParser {
     private String statementline(MT940 lines) {
         String xmlPart = "";
         for (int i = 0; i < lines.getField61().size(); i++) {
-            xmlPart +=      "       <statement" + i+1 + ">\n" +
+            xmlPart +=      "       <statement" + i + ">\n" +
                             "           <:61:>\n" +
                             "               <valueDate>" + lines.getField61().get(i).getValueDate() + "</valueDate>\n" +
                             "               <entryDate>" + lines.getField61().get(i).getEntryDate() + "</entryDate>\n" +
@@ -66,7 +66,7 @@ public class XmlService implements FileParser {
                             "               <line5>" + lines.getField86().get(i).getLine(5) + "</line5>\n" +
                             "               <line6>" + lines.getField86().get(i).getLine(6) + "</line6>\n" +
                             "           </:86:>\n" +
-                            "       </statement" + i+1 + ">\n";
+                            "       </statement" + i + ">\n";
         }
         return xmlPart;
     }
