@@ -44,30 +44,31 @@ public class XmlService implements FileParser {
     }
 
     private String statementline(MT940 lines) {
-        String xmlPart = "";
+        String xmlPart =    "       <statements>\n";
         for (int i = 0; i < lines.getField61().size(); i++) {
-            xmlPart +=      "       <statement" + i + ">\n" +
-                            "           <line61>\n" +
-                            "               <valueDate>" + lines.getField61().get(i).getValueDate() + "</valueDate>\n" +
-                            "               <entryDate>" + lines.getField61().get(i).getEntryDate() + "</entryDate>\n" +
-                            "               <creditDebit>" + lines.getField61().get(i).getDebitCreditMark() + "</creditDebit>\n" +
-                            "               <fundCode>" + lines.getField61().get(i).getFundsCode() + "</fundCode>\n" +
-                            "               <amount>" + lines.getField61().get(i).getAmount() + "</amount>\n" +
-                            "               <identifierCode>" + lines.getField61().get(i).getIdentificationCode() + "</identifierCode>\n" +
-                            "               <customerReference>" + lines.getField61().get(i).getReferenceForTheAccountOwner() + "</customerReference>\n" +
-                            "               <bankReference>" + lines.getField61().get(i).getReferenceOfTheAccountServicingInstitution() + "</bankReference>\n" +
-                            "               <supplementaryDetails>" + lines.getField61().get(i).getSupplementaryDetails() + "</supplementaryDetails>\n" +
-                            "           </line61>\n" +
-                            "           <line86>\n" +
-                            "               <line1>" + lines.getField86().get(i).getLine(1) + "</line1>\n" +
-                            "               <line2>" + lines.getField86().get(i).getLine(2) + "</line2>\n" +
-                            "               <line3>" + lines.getField86().get(i).getLine(3) + "</line3>\n" +
-                            "               <line4>" + lines.getField86().get(i).getLine(4) + "</line4>\n" +
-                            "               <line5>" + lines.getField86().get(i).getLine(5) + "</line5>\n" +
-                            "               <line6>" + lines.getField86().get(i).getLine(6) + "</line6>\n" +
-                            "           </line86>\n" +
-                            "       </statement" + i + ">\n";
+            xmlPart +=      "          <statement" + i + ">\n" +
+                            "              <line61>\n" +
+                            "                  <valueDate>" + lines.getField61().get(i).getValueDate() + "</valueDate>\n" +
+                            "                  <entryDate>" + lines.getField61().get(i).getEntryDate() + "</entryDate>\n" +
+                            "                  <creditDebit>" + lines.getField61().get(i).getDebitCreditMark() + "</creditDebit>\n" +
+                            "                  <fundCode>" + lines.getField61().get(i).getFundsCode() + "</fundCode>\n" +
+                            "                  <amount>" + lines.getField61().get(i).getAmount() + "</amount>\n" +
+                            "                  <identifierCode>" + lines.getField61().get(i).getIdentificationCode() + "</identifierCode>\n" +
+                            "                  <customerReference>" + lines.getField61().get(i).getReferenceForTheAccountOwner() + "</customerReference>\n" +
+                            "                   <bankReference>" + lines.getField61().get(i).getReferenceOfTheAccountServicingInstitution() + "</bankReference>\n" +
+                            "                   <supplementaryDetails>" + lines.getField61().get(i).getSupplementaryDetails() + "</supplementaryDetails>\n" +
+                            "               </line61>\n" +
+                            "              <line86>\n" +
+                            "                   <line1>" + lines.getField86().get(i).getLine(1) + "</line1>\n" +
+                            "                   <line2>" + lines.getField86().get(i).getLine(2) + "</line2>\n" +
+                            "                   <line3>" + lines.getField86().get(i).getLine(3) + "</line3>\n" +
+                            "                   <line4>" + lines.getField86().get(i).getLine(4) + "</line4>\n" +
+                            "                   <line5>" + lines.getField86().get(i).getLine(5) + "</line5>\n" +
+                            "                  <line6>" + lines.getField86().get(i).getLine(6) + "</line6>\n" +
+                            "               </line86>\n" +
+                            "          </statement" + i + ">\n";
         }
+        xmlPart += "       </statements>\n";
         return xmlPart;
     }
 }
