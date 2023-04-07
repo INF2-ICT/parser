@@ -16,8 +16,8 @@ public class JsonService implements FileParser {
 
     /**
      * Function to parse MT940 file to JSON
-     * @param file
-     * @return
+     * @param file file of mt940
+     * @return string
      * @throws IOException
      */
     @Override
@@ -64,8 +64,8 @@ public class JsonService implements FileParser {
 
     /**
      * Function to create JSONObject of all statements
-     * @param mt940parsed
-     * @return
+     * @param mt940parsed mt940 object
+     * @return String of all stament lines
      */
     private String statementLine(MT940 mt940parsed) {
         JSONObject json = new JSONObject();
