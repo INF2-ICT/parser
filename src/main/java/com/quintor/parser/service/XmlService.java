@@ -1,8 +1,9 @@
 package com.quintor.parser.service;
 
-
 import com.prowidesoftware.swift.model.mt.mt9xx.MT940;
+
 import com.quintor.parser.interfaces.FileParser;
+
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
