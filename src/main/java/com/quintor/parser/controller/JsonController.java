@@ -27,8 +27,6 @@ public class JsonController {
 
         MultipartFile result = new MockMultipartFile(file.getName(), file.getName(), "text/plain", inputStream.readAllBytes());
 
-        System.out.println(jsonService.parseFile(result));
-
         return jsonService.parseFile(result);
     }
 }
