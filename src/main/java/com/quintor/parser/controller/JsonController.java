@@ -21,12 +21,7 @@ public class JsonController {
     }
 
     @PostMapping("/MT940toJSON")
-    public String MT940toJSON(@RequestParam("file") File file) throws Exception {
-
-        FileInputStream inputStream = new FileInputStream(file);
-
-        MultipartFile result = new MockMultipartFile(file.getName(), file.getName(), "text/plain", inputStream.readAllBytes());
-
-        return jsonService.parseFile(result);
+    public String MT940toJSON(@RequestParam("file") MultipartFile multipartFile) throws Exception {
+        return jsonService.parseFile(multipartFile);
     }
 }
