@@ -21,12 +21,7 @@ public class XmlController {
     }
 
     @PostMapping("/MT940toXML")
-    public String MT940toXML(@RequestParam("file") File file) throws Exception {
-
-        FileInputStream inputStream = new FileInputStream(file);
-
-        MultipartFile result = new MockMultipartFile(file.getName(), file.getName(), "text/plain", inputStream.readAllBytes());
-
-        return xmlService.parseFile(result);
+    public String MT940toXML(@RequestParam("file") MultipartFile multipartFile) throws Exception {
+        return xmlService.parseFile(multipartFile);
     }
 }
